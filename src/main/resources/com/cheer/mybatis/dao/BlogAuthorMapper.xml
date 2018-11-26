@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?><!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace对应的dao接口-->
+<mapper namespace="com.cheer.mybatis.dao.BlogMapper">
+    <select id="getblogauthor">
+        select b.id blog_id,
+                b.title title,
+                a.id author_id,
+                a.author author,
+                a.password password
+        from blog b left join authoe a on b.authoe=b.author
+        where b.id=#{id}
+    </select>
+
+
+</mapper>
